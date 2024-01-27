@@ -2,16 +2,25 @@
 import { ref } from 'vue'
 
 const scoreRef = ref(100)
-const title = ref('Counter in Vue! Can you view it?')
-function toggleTitle() {
-  let mainTitle = title.value
-  // let otherTitle = 'YES'
 
-  mainTitle == 'Counter in Vue! Can you view it?'
-    ? (title.value = 'YES')
-    : mainTitle == 'YES'
-      ? (title.value = 'Counter in Vue! Can you view it?')
+const mainTitle = 'Counter in Vue! Can you view it?'
+const otherTitle = 'YES'
+
+const title = ref(mainTitle)
+
+function toggleTitle() {
+  let titleValue = title.value
+
+  titleValue == mainTitle
+    ? (title.value = otherTitle)
+    : titleValue == otherTitle
+      ? (title.value = mainTitle)
       : ''
+  // mainTitle == 'Counter in Vue! Can you view it?'
+  //   ? (title.value = otherTitle)
+  //   : mainTitle == otherTitle
+  //     ? (title.value = mainTitle)
+  //     : ''
 }
 </script>
 
@@ -41,6 +50,7 @@ function toggleTitle() {
 
 <style>
 main {
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
