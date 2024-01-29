@@ -48,7 +48,7 @@ function toggleTitle() {
   </main>
 </template>
 
-<style>
+<style scoped>
 main {
   width: auto;
   display: flex;
@@ -77,5 +77,6 @@ h2 {
   background-color: antiquewhite;
   font-size: 2rem;
   cursor: pointer;
+  text-transform: capitalize;
 }
 </style>
